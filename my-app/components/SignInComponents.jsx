@@ -37,7 +37,7 @@ export const SignInBody = () => {
             <span className="text-textgray">New to Netflix?</span>
             <a href="" className="text-white"> Sign up now</a> <br />
             <p className="text-textgray mt-4 text-sm leading-[4px]">
-              This page is protected by Google reCAPTCHA to ensure you're not a bot.
+              This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.
               <a href="" className="text-textblue  leading-6"> Learn more.</a>
             </p>
           </div>
