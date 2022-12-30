@@ -22,7 +22,7 @@ export const HeaderMovie = () => {
   return (
     <div className="relative ">
           <div className=" "> 
-            <Image className=" "   src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+            <Image className=" " src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
           </div> 
           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
             <div className=" grid grid-cols-1">
