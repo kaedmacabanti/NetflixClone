@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import request from "../pages/api/Request_Api";
+import Image from 'next/image';
 
 export const HeaderMovie = () => {
   const [movies, setMovies] = useState([])
@@ -21,7 +22,7 @@ export const HeaderMovie = () => {
   return (
     <div className="relative ">
           <div className=" "> 
-            <img className=" "   src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+            <Image className=" "   src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
           </div> 
           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
             <div className=" grid grid-cols-1">
@@ -54,7 +55,7 @@ const MovieContainer = ({item}) => {
   return (
         < >  
           <div onClick={toggleModal}   className=" w-[228px] mx-[3.5px] h-[128px] inline-block cursor-pointer relative rounded overflow-hidden">
-            <img className="w-full h-full object-cover block" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" />
+            <Image className="w-full h-full object-cover block" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" />
             <div className='absolute top-0 left-0 w-full h-full hover:bg-black/40 opacity-0 hover:opacity-100'>
               <p className='m-2 text-white'>{item?.title}</p>
             </div>
@@ -67,7 +68,7 @@ const MovieContainer = ({item}) => {
                 <div className='h-[30rem]  '>
                   <i onClick={toggleModal}  class="fa-solid fa-x text-white text-[20px] bg-black/25 px-[14px] py-[12px] rounded-[50%] absolute right-8 top-6 hover:bg-black/50"></i>
                    
-                  <img src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  className=" w-full object-cover" alt="" />
+                  <Image src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  className=" w-full object-cover" alt="" />
                   <div className='text-white h-[110px] w-full block absolute bottom-[208px] bg-gradient-to-t from-moviecontainerhover '></div>
                   <div className='ml-[3rem] text-white font-bold text-[45px] h-[110px] w-[500px] block absolute bottom-[290px]'>
                     {item?.title}
