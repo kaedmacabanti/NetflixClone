@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+.signInForm{
+    @apply bg-black/[.8] p-[4.1rem] w-[28rem] h-[41.25rem] rounded-[4px]
+}
+
+.signInText{
+    @apply text-white font-bold text-3xl
+}
+
+.signInBtn{
+    @apply bg-red-600  flex justify-center w-full text-white rounded-[4px] font-bold 
+}
+
+.inputBox{
+    @apply py-[.8rem] pl-5 w-full bg-defaultinputcolor rounded-[4px] 
+}
+
+.footerTxt{
+    @apply text-textgray text-sm
+}
+
+
+.bg-netflix{
+    /* background-image: url("../Assets/netflix-bg.jpg"); */
+    background-image: url("../assets/netflix-bg.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    /* height: 1031px;   */
+}
+
+/* navigation */
+
+.navbardefault{
+    @apply fixed z-20 w-full h-[4.25rem]  bg-gradient-to-b from-black/60   
+}
+
+.navbarscrolled{
+    @apply fixed z-20 w-full h-[4.25rem]  bg-black
+
+}
+
+.navText{
+    @apply text-navtextselected hover:text-navtexthover  px-[.52rem] text-[15px]
+}
+
+.navIcon{
+    @apply text-navtextselected hover:text-navtexthover text-[15px]
+}
+
+.dropdowntext{
+    @apply text-navtextselected my-[.5rem] text-[15px] hover:underline
+}
+
+.dropdownicon{
+    @apply text-navtexthover mx-[1rem] text-xl 
+}
+
+.clickedsearch{
+    @apply border w-[10rem] bg-black/80  
+}
+ 
+
+/* home footer text */
+
+.footertxt{
+    @apply text-navtexthover text-xs
+
+}
+
+.footericons{
+    @apply text-white text-[1.4rem] px-3
+}
+
+
+/* moviecontainer */
+
+.hovericons{
+    @apply text-navtextselected hover:text-navtexthover text-[1.4rem] border px-[10px] py-[8px] rounded-[50%]
+}
+
+.defcont{
+   @apply w-[228px] mx-[3.5px] h-[128px] inline-block cursor-pointer relative rounded overflow-hidden  
+
+}
+
+.hovcont{
+
+}
+
+.active-modal{
+    overflow-y: auto;
+}
+
+
+/*searchbar ////////////////////////// */
+
+.active-search{
+    @apply border
+}
