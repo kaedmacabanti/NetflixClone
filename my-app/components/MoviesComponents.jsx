@@ -4,7 +4,7 @@ import axios from "axios";
 import request from "../pages/api/Request_Api";
 import Image from 'next/image';
 
-const myLoader=({src})=>{
+const MyLoader=({src})=>{
   const [movies, setMovies] = useState([]);
   const movie = movies[Math.floor(Math.random()*movies.length)];
   useEffect(()=> {
@@ -37,7 +37,7 @@ export const HeaderMovie = () => {
   return (
     <div className="relative">
           <div className="h-[100vh]"> 
-            <Image className=" " loader={myLoader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+            <Image className=" " loader={MyLoader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
           </div> 
           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
             <div className=" grid grid-cols-1">
