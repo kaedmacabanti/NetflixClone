@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- 
 .signInForm{
     @apply bg-black/[.8] p-[4.1rem] w-[28rem] h-[41.25rem] rounded-[4px]
 }
@@ -25,11 +24,11 @@
 
 
 .bg-netflix{
-    /* background-image: url("../Assets/netflix-bg.jpg"); */
-    background-image: url("../assets/netflix-bg.jpg");
+    background-image: url("../Assets/netflix-bg.jpg");
     background-repeat: no-repeat;
-    width: 100%;
-    /* height: 1031px;   */
+ 
+    width: auto;
+    height: 1031px;  
 }
 
 /* navigation */
