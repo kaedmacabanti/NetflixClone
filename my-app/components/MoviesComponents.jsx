@@ -155,7 +155,7 @@ export const MovieRow= ({title,fetchURL, rowID}) => {
               <i onClick={sliderLeft} class=" z-30 fa-solid fa-chevron-left absolute left-0 text-white  ml-[0rem]  text-[2rem] bg-black/60 py-[3.2rem] px-[1rem] opacity-0 hover:opacity-100 hidden group-hover:block"></i>
           <div id={'slider'+ rowID} className=' px-[3.4rem] w-screen   h-full overflow-x-scroll scrollbar-hide scroll whitespace-nowrap scroll-smooth  relative'>
             {movies.map((item, id)=>(
-              <MovieContainer item={item} index = {id} />
+              <MovieContainer item={item} index={id} key={id}/>
             ))}
           </div> 
                 <i onClick={sliderRight} class=" z-30 fa-solid fa-chevron-right absolute right-0 text-white mr-[1.2rem]  text-[2rem] bg-black/60 py-[3.2rem] px-[1rem] opacity-0 hover:opacity-100 hidden group-hover:block"></i>
