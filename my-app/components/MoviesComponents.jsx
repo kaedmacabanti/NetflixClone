@@ -4,7 +4,9 @@ import axios from "axios";
 import request from "../pages/api/Request_Api";
 import Image from 'next/image';
 
-const MyLoader=({src})=>{
+
+//backdrop_path loader
+const MyLoader=({})=>{
   const [movies, setMovies] = useState([]);
   const movie = movies[Math.floor(Math.random()*movies.length)];
   useEffect(()=> {
@@ -17,6 +19,21 @@ const MyLoader=({src})=>{
 
   return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 }
+
+const MyLoader1=({item})=>{
+  const [movies, setMovies] = useState([]);
+  const movie = movies[Math.floor(Math.random()*movies.length)];
+  useEffect(()=> {
+    axios.get(request.requestPopular).then((response)=>(
+      setMovies(response.data.results)
+    ))
+  },[]) 
+
+  let backdrop_path = movie?.backdrop_path;
+
+  return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+}
+
 
 
 export const HeaderMovie = () => {
@@ -70,8 +87,10 @@ const MovieContainer = ({item}) => {
   return (
         < >  
           <div onClick={toggleModal}   className=" w-[228px] mx-[3.5px] h-[128px] inline-block cursor-pointer relative rounded overflow-hidden">
-            {/* <Image className="w-full h-full object-cover block" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" /> */}
-            <div className='absolute top-0 left-0 w-full h-full hover:bg-black/40 opacity-0 hover:opacity-100'>
+            <div className='h-[200px] w-[200px] '>
+              <Image className=" " loader={MyLoader1} layout="fill" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" />
+            </div>
+             <div className='absolute top-0 left-0 w-full h-full hover:bg-black/40 opacity-0 hover:opacity-100'>
               <p className='m-2 text-white'>{item?.title}</p>
             </div>
           </div> 
@@ -157,9 +176,13 @@ export const MovieRow= ({title,fetchURL, rowID}) => {
             {movies.map((item, id)=>(
               <MovieContainer item={item} index={id} key={id}/>
             ))}
+            {movies.map((item, id)=>(
+              <MyLoader1 item={item} index={id} key={id}/>
+            ))}
           </div> 
                 <i onClick={sliderRight} class=" z-30 fa-solid fa-chevron-right absolute right-0 text-white mr-[1.2rem]  text-[2rem] bg-black/60 py-[3.2rem] px-[1rem] opacity-0 hover:opacity-100 hidden group-hover:block"></i>
           </div>
+        
       </div>
     )
 
