@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 
 import Navbar from '../components/Navbar'
 import SignIn from './main_pages/SignIn'
+import Movies from './main_pages/Movies'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <Navbar/>
-        <SignIn/>
+        {/* <Navbar/> */}
+        {/* <SignIn/> */}
+        <Movies/>
       </main>
     </>
   )
