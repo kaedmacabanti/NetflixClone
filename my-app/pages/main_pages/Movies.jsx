@@ -7,7 +7,7 @@ const Movies = () => {
       <Navbar/>
       <HeaderMovie/>
       <MoviesComponents/>
-      <Footer/>
+      <Footer/> 
     </div>
   )
 }

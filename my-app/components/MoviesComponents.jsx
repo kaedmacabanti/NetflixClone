@@ -4,37 +4,6 @@ import axios from "axios";
 import request from "../pages/api/Request_Api";
 import Image from 'next/image';
 
-
-//backdrop_path loader
-const MyLoader=({})=>{
-  const [movies, setMovies] = useState([]);
-  const movie = movies[Math.floor(Math.random()*movies.length)];
-  useEffect(()=> {
-    axios.get(request.requestPopular).then((response)=>(
-      setMovies(response.data.results)
-    ))
-  },[]) 
-
-  let backdrop_path = movie?.backdrop_path
-
-  return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-}
-
-//backdrop_path test loader 
-// const MyLoaderTest=({})=>{
-//   const [movies, setMovies] = useState([]);
-//   const movie = movies[Math.floor(Math.random()*movies.length)];
-//   useEffect(()=> {
-//     axios.get(request.requestPopular).then((response)=>(
-//       setMovies(response.data.results)
-//     ))
-//   },[]) 
-
-//   let backdrop_path = movie?.backdrop_path
-
-//   return `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
-// }
-
 export const HeaderMovie = () => {
   const [movies, setMovies] = useState([])
 
@@ -50,10 +19,14 @@ export const HeaderMovie = () => {
   let original_title = movie?.original_title
   let overview = movie?.overview
 
+  const Loader=({})=>{
+    return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+  }
+
   return (
     <div className="relative">
           <div className="h-[100vh]"> 
-            <Image className=" " loader={MyLoader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+            <Image className=" " loader={Loader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
           </div> 
           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
             <div className=" grid grid-cols-1">
@@ -98,15 +71,14 @@ const MovieContainer = ({item}) => {
               <p className='m-2 text-white'>{item?.title}</p>
             </div>
           </div> 
-        
-
+      
           {modal && (
             <div  className=" w-screen h-screen fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center z-20     ">
               <div className=' z-20 mt-[30px]  h-[43rem] w-[53rem] overflow-hidden rounded-md bg-moviecontainerhover absolute'>
                 <div className='h-[30rem]  '>
                   <i onClick={toggleModal}  class="fa-solid fa-x text-white text-[20px] bg-black/25 px-[14px] py-[12px] rounded-[50%] absolute right-8 top-6 hover:bg-black/50"></i>
-                   <div className=" w-[53rem]">
-                       <Image loader={Loader} layout="fill" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  />
+                   <div className=" w-[53rem] bg-red-400">
+                       <Image loader={Loader} width={1000} height={0} src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  />
                     </div>
                    <div className='text-white h-[110px] w-full block absolute bottom-[208px] bg-gradient-to-t from-moviecontainerhover '></div>
                   <div className='ml-[3rem] text-white font-bold text-[45px] h-[110px] w-[500px] block absolute bottom-[290px]'>
@@ -144,7 +116,6 @@ const MovieContainer = ({item}) => {
               <div  onClick={toggleModal}  className=' w-full h-full bg-black/40'>
               </div>
           </div>
-
           )}
       </ >
   )
