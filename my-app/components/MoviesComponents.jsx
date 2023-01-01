@@ -20,21 +20,20 @@ const MyLoader=({})=>{
   return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 }
 
-const MyLoader1=({item})=>{
-  const [movies, setMovies] = useState([]);
-  const movie = movies[Math.floor(Math.random()*movies.length)];
-  useEffect(()=> {
-    axios.get(request.requestPopular).then((response)=>(
-      setMovies(response.data.results)
-    ))
-  },[]) 
+//backdrop_path test loader 
+// const MyLoaderTest=({})=>{
+//   const [movies, setMovies] = useState([]);
+//   const movie = movies[Math.floor(Math.random()*movies.length)];
+//   useEffect(()=> {
+//     axios.get(request.requestPopular).then((response)=>(
+//       setMovies(response.data.results)
+//     ))
+//   },[]) 
 
-  let backdrop_path = movie?.backdrop_path;
+//   let backdrop_path = movie?.backdrop_path
 
-  return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-}
-
-
+//   return `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
+// }
 
 export const HeaderMovie = () => {
   const [movies, setMovies] = useState([])
@@ -84,11 +83,16 @@ const MovieContainer = ({item}) => {
     setModal(!modal)
   };
  
+  const Loader = () => {
+    let item_path = item?.backdrop_path;
+    return `https://image.tmdb.org/t/p/original/${item_path}`;
+  }
+
   return (
         < >  
           <div onClick={toggleModal}   className=" w-[228px] mx-[3.5px] h-[128px] inline-block cursor-pointer relative rounded overflow-hidden">
             <div className='h-[200px] w-[200px] '>
-              <Image className=" " loader={MyLoader1} layout="fill" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" />
+              <Image className=" " loader={Loader} layout="fill" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}    alt="" />
             </div>
              <div className='absolute top-0 left-0 w-full h-full hover:bg-black/40 opacity-0 hover:opacity-100'>
               <p className='m-2 text-white'>{item?.title}</p>
@@ -101,9 +105,10 @@ const MovieContainer = ({item}) => {
               <div className=' z-20 mt-[30px]  h-[43rem] w-[53rem] overflow-hidden rounded-md bg-moviecontainerhover absolute'>
                 <div className='h-[30rem]  '>
                   <i onClick={toggleModal}  class="fa-solid fa-x text-white text-[20px] bg-black/25 px-[14px] py-[12px] rounded-[50%] absolute right-8 top-6 hover:bg-black/50"></i>
-                   
-                  {/* <Image src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  className=" w-full object-cover" alt="" /> */}
-                  <div className='text-white h-[110px] w-full block absolute bottom-[208px] bg-gradient-to-t from-moviecontainerhover '></div>
+                   <div className=" w-[53rem]">
+                       <Image loader={Loader} layout="fill" src={'https://image.tmdb.org/t/p/w500/'+item?.backdrop_path}  />
+                    </div>
+                   <div className='text-white h-[110px] w-full block absolute bottom-[208px] bg-gradient-to-t from-moviecontainerhover '></div>
                   <div className='ml-[3rem] text-white font-bold text-[45px] h-[110px] w-[500px] block absolute bottom-[290px]'>
                     {item?.title}
                   </div>
@@ -146,6 +151,8 @@ const MovieContainer = ({item}) => {
 }
 
 
+ 
+
 export const MovieRow= ({title,fetchURL, rowID}) => {
     const [movies, setMovies] = useState([])
 
@@ -176,9 +183,7 @@ export const MovieRow= ({title,fetchURL, rowID}) => {
             {movies.map((item, id)=>(
               <MovieContainer item={item} index={id} key={id}/>
             ))}
-            {movies.map((item, id)=>(
-              <MyLoader1 item={item} index={id} key={id}/>
-            ))}
+        
           </div> 
                 <i onClick={sliderRight} class=" z-30 fa-solid fa-chevron-right absolute right-0 text-white mr-[1.2rem]  text-[2rem] bg-black/60 py-[3.2rem] px-[1rem] opacity-0 hover:opacity-100 hidden group-hover:block"></i>
           </div>
