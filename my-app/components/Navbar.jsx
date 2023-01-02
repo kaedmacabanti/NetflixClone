@@ -67,7 +67,7 @@ const Navbar = () => {
                     <li className='dropdowntext'><i class="dropdownicon fa-solid fa-arrow-up-right-from-square"></i>Exit Profile</li>
                     <li className='dropdowntext'><i class="dropdownicon fa-regular fa-user"></i>Account</li>
                     <li className='dropdowntext'><i class="dropdownicon fa-regular fa-circle-question"></i>Help Center</li>
-                    <li className='dropdowntext text-center border-t border-navtexthover/40 py-[.8rem]'><Link href="/SignIn">Sign out of Netflix</Link></li>
+                    <li className='dropdowntext text-center border-t border-navtexthover/40 py-[.8rem]'><Link href="/main_pages/SignIn">Sign out of Netflix</Link></li>
                   </ul>
                   )}
               </ul>
