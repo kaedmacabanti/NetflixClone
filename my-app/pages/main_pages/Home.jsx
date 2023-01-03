@@ -1,5 +1,5 @@
 import Navbar from "../../components/a_Navbar";
-import {HeaderMovie, MoviesComponents} from "../../components/HomeComponents";
+import {HeaderMovie, HomeRows} from "../../components/HomeComponents";
 import Footer from "../../components/z_Footer";
 
 const HomePage = () => {
@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className='bg-homebackground'>
       <Navbar/>
       <HeaderMovie/>
-      <MoviesComponents/>
+      <HomeRows/>
       <Footer/> 
     </div>
   )

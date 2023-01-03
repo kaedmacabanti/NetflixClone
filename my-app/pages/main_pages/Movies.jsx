@@ -1,5 +1,5 @@
 import Navbar from '../../components/a_Navbar'
-import HeaderMovieChoices from '../../components/MoviesComponents'
+import { HeaderMovieChoices, MoviesRows } from '../../components/MoviesComponents'
 import Footer from '../../components/z_Footer'
 
 const Movies = () => {
@@ -7,6 +7,7 @@ const Movies = () => {
     <div className=' bg-homebackground'>
       <Navbar/>
       <HeaderMovieChoices/>
+      <MoviesRows/>
       <Footer/>
     </div>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-      <footer className='bg-homebackground h-[18.25rem] pt-[3rem] px-[17rem] '>
+      <footer className='bg-homebackground h-[13.25rem] px-[17rem] '>
           <div className='social-link'>
           <i class="fa-brands fa-facebook-f footericons"></i>
           <i class="fa-brands fa-instagram footericons"></i>

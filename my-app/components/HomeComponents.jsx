@@ -43,7 +43,7 @@ export const HeaderMovie = () => {
               <div className='h-full w-full bg-gradient-to-t from-homebackground'></div>
             </div> 
             <div className="h-[190px]  w-full absolute bottom-0 ">
-              <MovieRow rowID="1" title="Up Coming" fetchURL={request.requestUpcoming} />      
+              <MovieRow rowID="1" title="Upcoming Movies" fetchURL={request.requestUpcomingMovies} />      
             </div> 
       </div>
   )
@@ -161,16 +161,16 @@ export const MovieRow= ({title,fetchURL, rowID}) => {
 
 }
  
-export const MoviesComponents = () => {
+export const HomeRows = () => {
 
   return (
     <div className=' bg-homebackground h-full  '>
 
         <div className=''>
-          <div className='grid gap-y-[2.5rem]  mb-[8.1rem] mt-[1.4rem]'>
-            <MovieRow rowID="2" title="Popular" fetchURL={request.requestPopular} />
-            <MovieRow rowID="3" title="Top Rated" fetchURL={request.requestTopRated} />
-            <MovieRow rowID="4" title="Now Playing" fetchURL={request.requestNowPlaying} />
+          <div className='grid gap-y-[2.5rem]  pb-[8.1rem] pt-[1.4rem]'>
+            <MovieRow rowID="2" title="Top Rated Movies" fetchURL={request.requestTopRatedMovies} />
+            <MovieRow rowID="3" title="Popular Shows" fetchURL={request.requestOnAirTv} />
+            <MovieRow rowID="4" title="Top Rated Shows" fetchURL={request.requestTopRatedTv} />
           </div>
         </div>
       
