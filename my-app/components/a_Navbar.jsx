@@ -39,9 +39,9 @@ const Navbar = () => {
         <div className='grid grid-cols-2 w-full h-full'>
           <ul className='flex justify-start items-center'>
                   <Image src={logo}  className="w-[140px] pr-[2.5rem]" alt="" />
-                  <li className='navText'> Home</li>
+                  <li className='navText'><Link href="/main_pages/Home">Home</Link></li>
                   <li className='navText'> TV Shows</li>
-                  <li className='navText'> Movies</li>
+                  <li className='navText'><Link href="/main_pages/Movies">Movies</Link></li>
                   <li className='navText'> New and Popular</li>
                   <li className='navText'> My List</li>
                   <li className='navText'> Browse by Languages</li>

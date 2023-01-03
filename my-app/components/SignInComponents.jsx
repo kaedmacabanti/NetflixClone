@@ -21,7 +21,7 @@ export const SignInBody = () => {
             <h1 className="signInText mb-[1.75rem]">Sign In</h1>
             <input className="inputBox mb-[1.1rem] text-white" type="text" placeholder="Email or phone number" />
             <input className="inputBox mb-3 text-white " type="password" placeholder="Password"/>
-            <Link href="/main_pages/Movies"><button className="signInBtn mt-[1.6rem] p-[.7rem]">Sign In</button></Link> 
+            <Link href="/main_pages/Home"><button className="signInBtn mt-[1.6rem] p-[.7rem]">Sign In</button></Link> 
             
             <span className="flex justify-between my-2">
               <span>

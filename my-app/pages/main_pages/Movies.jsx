@@ -1,17 +1,15 @@
-import {HeaderMovie, MoviesComponents , Footer,} from "../../components/MoviesComponents";
-import Navbar from "../../components/Navbar";
- 
+import Navbar from '../../components/a_Navbar'
+import HeaderMovieChoices from '../../components/MoviesComponents'
+import Footer from '../../components/z_Footer'
+
 const Movies = () => {
   return (
-    <div className='bg-homebackground'>
+    <div className=' bg-homebackground'>
       <Navbar/>
-      <HeaderMovie/>
-      <MoviesComponents/>
-      <Footer/> 
+      <HeaderMovieChoices/>
+      <Footer/>
     </div>
   )
 }
 
 export default Movies
- 
-
