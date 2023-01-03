@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Link from 'next/link'
 
 const Searchbar = () =>{
-
   // const icon = document.querySelector('.icon')
   // const search = document.querySelector('.search')
   return(
@@ -40,8 +39,8 @@ const Navbar = () => {
           <ul className='flex justify-start items-center'>
                   <Image src={logo}  className="w-[140px] pr-[2.5rem]" alt="" />
                   <li className='navText'><Link href="/main_pages/Home">Home</Link></li>
-                  <li className='navText'> TV Shows</li>
                   <li className='navText'><Link href="/main_pages/Movies">Movies</Link></li>
+                  <li className='navText'><Link href="/main_pages/Tv">Tv Shows</Link></li>
                   <li className='navText'> New and Popular</li>
                   <li className='navText'> My List</li>
                   <li className='navText'> Browse by Languages</li>

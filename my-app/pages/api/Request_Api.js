@@ -18,9 +18,10 @@ const request = {
 
     //tvShows
     requestTvPopular : "https://api.themoviedb.org/3/tv/popular?api_key="+$key+"&language=en-US&page=1", //looped for header
+    requestTvTopRated : "https://api.themoviedb.org/3/tv/top_rated?api_key="+$key+"&language=en-US&page=1", 
     requestTvAiringToday : "https://api.themoviedb.org/3/tv/airing_today?api_key="+$key+"&language=en-US&page=1", 
     requestTvOnAir : "https://api.themoviedb.org/3/tv/on_the_air?api_key="+$key+"&language=en-US&page=1", 
-    requestTvTopRated : "https://api.themoviedb.org/3/tv/top_rated?api_key="+$key+"&language=en-US&page=1", 
+  
 
 }
 

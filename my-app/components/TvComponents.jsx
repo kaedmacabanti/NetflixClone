@@ -4,50 +4,50 @@ import axios from "axios";
 import request from "../pages/api/Request_Api";
 import Image from 'next/image';
 
-export const HeaderMovie = () => {
-  const [movies, setMovies] = useState([])
+// export const HeaderMovie = () => {
+//   const [movies, setMovies] = useState([])
 
-  const movie = movies[Math.floor(Math.random()*movies.length)]
+//   const movie = movies[Math.floor(Math.random()*movies.length)]
 
-  useEffect(()=> {
-    axios.get(request.requestPopular).then((response)=>(
-      setMovies(response.data.results)
-    ))
-  },[]) 
+//   useEffect(()=> {
+//     axios.get(request.requestPopular).then((response)=>(
+//       setMovies(response.data.results)
+//     ))
+//   },[]) 
 
-  let backdrop_path = movie?.backdrop_path
-  let original_title = movie?.original_title
-  let overview = movie?.overview
+//   let backdrop_path = movie?.backdrop_path
+//   let original_title = movie?.original_title
+//   let overview = movie?.overview
 
-  const Loader=({})=>{
-    return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-  }
+//   const Loader=({})=>{
+//     return `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+//   }
 
-  return (
-    <div className="relative">
-          <div className="h-[100vh]"> 
-            <Image className=" " loader={Loader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
-          </div> 
-          <div className="absolute bottom-[19rem] left-[3.4rem] ]">
-            <div className=" grid grid-cols-1">
-              <label className="text-white text-[4rem] w-[36rem] drop-shadow-lg font-bold leading-[4.5rem] mb-[1rem] shadow-black" htmlFor="">{original_title}</label>
-              <label className="text-white text-xl w-[36rem] mb-[2rem] drop-shadow-lg shadow-black hidden " htmlFor=" ">{overview}</label>
-              <span>
-                <button className="text-xl font-bold rounded bg-white hover:bg-white/70 text-black px-10 py-2 mr-4"> <i class="fa-solid fa-play"></i> Play</button>
-                <button className="text-xl font-bold rounded bg-moreinfobtn/80 hover:bg-moreinfobtn/60 text-white px-7 py-2 mr-4 "><i class="fa-solid fa-circle-info"></i> More Info</button>
-              </span> 
-            </div> 
+//   return (
+//     <div className="relative">
+//           <div className="h-[100vh]"> 
+//             <Image className=" " loader={Loader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+//           </div> 
+//           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
+//             <div className=" grid grid-cols-1">
+//               <label className="text-white text-[4rem] w-[36rem] drop-shadow-lg font-bold leading-[4.5rem] mb-[1rem] shadow-black" htmlFor="">{original_title}</label>
+//               <label className="text-white text-xl w-[36rem] mb-[2rem] drop-shadow-lg shadow-black hidden " htmlFor=" ">{overview}</label>
+//               <span>
+//                 <button className="text-xl font-bold rounded bg-white hover:bg-white/70 text-black px-10 py-2 mr-4"> <i class="fa-solid fa-play"></i> Play</button>
+//                 <button className="text-xl font-bold rounded bg-moreinfobtn/80 hover:bg-moreinfobtn/60 text-white px-7 py-2 mr-4 "><i class="fa-solid fa-circle-info"></i> More Info</button>
+//               </span> 
+//             </div> 
 
-          </div>
-            <div className="h-[170px] w-full absolute bottom-0 bg-gradient-to-t from-homebackground  ">
-              <div className='h-full w-full bg-gradient-to-t from-homebackground'></div>
-            </div> 
-            <div className="h-[190px]  w-full absolute bottom-0 ">
-              <MovieRow rowID="1" title="Upcoming Movies" fetchURL={request.requestUpcomingMovies} />      
-            </div> 
-      </div>
-  )
-}
+//           </div>
+//             <div className="h-[170px] w-full absolute bottom-0 bg-gradient-to-t from-homebackground  ">
+//               <div className='h-full w-full bg-gradient-to-t from-homebackground'></div>
+//             </div> 
+//             <div className="h-[190px]  w-full absolute bottom-0 ">
+//               <MovieRow rowID="1" title="Upcoming Movies" fetchURL={request.requestUpcomingMovies} />      
+//             </div> 
+//       </div>
+//   )
+// }
 
 const MovieContainer = ({item}) => {
   const [modal, setModal] = useState(false)
@@ -161,19 +161,18 @@ export const MovieRow= ({title,fetchURL, rowID}) => {
 
 }
  
-export const HomeRows = () => {
+export const TvRows = () => {
 
   return (
-    <div className=' bg-homebackground h-full  '>
-
+    <div className=' bg-homebackground h-full pt-[5rem] '>
         <div className=''>
           <div className='grid gap-y-[2.5rem]  pb-[8.1rem] pt-[1.4rem]'>
-            <MovieRow rowID="2" title="Top Rated Movies" fetchURL={request.requestTopRatedMovies} />
-            <MovieRow rowID="3" title="Shows on Air" fetchURL={request.requestTvAiringToday} />
-            <MovieRow rowID="4" title="Top Rated Shows" fetchURL={request.requestTopRatedTv} /> 
+            <MovieRow rowID="2" title="Popular Shows" fetchURL={request.requestTvPopular} />
+            <MovieRow rowID="4" title="Shows on Air" fetchURL={request.requestTvOnAir} />
+            <MovieRow rowID="5" title="Top Rated" fetchURL={request.requestTvTopRated} />
+            <MovieRow rowID="3" title="Airing Today" fetchURL={request.requestTvAiringToday} />
           </div>
         </div>
-      
     </div>
   )
 }
