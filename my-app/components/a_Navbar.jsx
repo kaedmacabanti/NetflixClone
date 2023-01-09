@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
-import logo from '../assets/netflix-logo.png'
-import userlogo from '../assets/netflix-user-icon.jpg'
+import logo from '../assets/newstream-logo.png';
+import userlogo from '../assets/netflix-user-icon.jpg';
 import { useEffect, useState } from "react";
-import Link from 'next/link'
+import Link from 'next/link';
 
 const Searchbar = () =>{
   // const icon = document.querySelector('.icon')
