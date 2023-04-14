@@ -40,9 +40,11 @@
 
 .navbarscrolled{
     @apply fixed z-20 w-full h-[4.25rem]  bg-black
-
 }
 
+.menu{
+    @apply hidden
+}
 .navText{
     @apply text-navtextselected hover:text-navtexthover  px-[.52rem] text-[15px]
 }
@@ -61,6 +63,16 @@
 
 .clickedsearch{
     @apply border w-[10rem] bg-black/80  
+}
+
+/* navigation responsive */
+@media  (max-width: 1500px) {
+    .navText{
+        @apply hidden
+    }
+    .menu{
+        @apply block
+    }
 }
  
 

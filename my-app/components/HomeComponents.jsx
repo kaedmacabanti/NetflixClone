@@ -26,7 +26,7 @@ export const HeaderMovie = () => {
   return (
     <div className="relative">
           <div className="h-[100vh]"> 
-            <Image className=" " loader={Loader}  layout="fill"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
+            <Image className=" " loader={Loader}  layout="fill"  objectFit="cover"  src={'https://image.tmdb.org/t/p/original/'+backdrop_path} alt="" />
           </div> 
           <div className="absolute bottom-[19rem] left-[3.4rem] ]">
             <div className=" grid grid-cols-1">

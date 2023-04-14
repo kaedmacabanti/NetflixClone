@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import logo from '../assets/newstream-logo.png';
+import logo from '../assets/flixter.png';
 import userlogo from '../assets/netflix-user-icon.jpg';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
@@ -38,6 +38,7 @@ const Navbar = () => {
         <div className='grid grid-cols-2 w-full h-full'>
           <ul className='flex justify-start items-center'>
                   <Image src={logo}  className="w-[140px] pr-[2.5rem]" alt="" />
+                  <i class="menu fa-solid fa-bars text-white"></i>
                   <li className='navText'><Link href="/main_pages/Home">Home</Link></li>
                   <li className='navText'><Link href="/main_pages/Movies">Movies</Link></li>
                   <li className='navText'><Link href="/main_pages/Tv">Tv Shows</Link></li>
